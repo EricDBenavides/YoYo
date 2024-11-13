@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block head %}
+    <!-- Enlace al archivo CSS en la carpeta 'static' -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% endblock %}
+
+{% block body %}
+<header>
+    <!-- Botón de Login en la esquina superior izquierda -->
+    <div id="login-button">
+        {% if not is_admin %}
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+        {% else %}
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        {% endif %}
+    </div>
+</header>
+
+<div id="map"></div>
+
+<!-- Popup Menu for marker actions -->
+<div id="popup-menu" style="display: none;">
+    <h3>Nombre del Refugio</h3>
+    <ul>
+        <li><a href="#" id="option-edit">Editar</a></li>
+        <li><a href="#" id="option-delete">Eliminar</a></li>
+    </ul>
+</div>
+
+<script>
+    const isAdmin = {{ is_admin | tojson }};  // Variable de autenticación
+    // const markers = {{ markers | tojson }};  // Pasa los marcadores desde Flask a JavaScript
+</script>
+
+<!-- Enlace al archivo JavaScript en la carpeta 'static' -->
+<script src="{{ url_for('static', filename='map.js') }}"></script>
+{% endblock %}

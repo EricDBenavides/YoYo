@@ -1,0 +1,91 @@
+/* Restablecer márgenes y rellenos */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Mapa ocupando toda la pantalla */
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+/* Botón de Login/Logout en la esquina superior izquierda */
+#login-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del menú emergente */
+.popup-menu {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    width: 150px;
+}
+
+.popup-menu h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.popup-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-menu ul li {
+    margin-bottom: 8px;
+}
+
+.popup-menu ul li a {
+    display: block;
+    padding: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #007bff;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.popup-menu ul li a:hover {
+    background-color: #f0f8ff;
+}
+
+/* Mejora de estilo para el mapa */
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+}
